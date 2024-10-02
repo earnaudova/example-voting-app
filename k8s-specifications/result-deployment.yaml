@@ -15,7 +15,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: 261610780523.dkr.ecr.eu-central-1.amazonaws.com/voting-app-repo:result
+      - image: 163567341888.dkr.ecr.eu-central-1.amazonaws.com/voting-app-repo:result
         name: result
         imagePullPolicy: Always
         ports:
