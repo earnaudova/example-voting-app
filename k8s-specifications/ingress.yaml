@@ -8,12 +8,13 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:163567341888:certificate/25d41a1e-a1a0-4e22-aff3-da830c8bff0d
     alb.ingress.kubernetes.io/actions.ssl-redirect: >
       {"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}
 spec:
   ingressClassName: alb
   rules:
-    - host: vote.voting.56kcloud.io
+    - host: vote.56kcloud.dev
       http:
         paths:
           - path: /
@@ -23,7 +24,7 @@ spec:
                 name: vote
                 port:
                   number: 5000      
-    - host: result.voting.56kcloud.io
+    - host: result.56kcloud.dev
       http:
         paths:
           - path: /
